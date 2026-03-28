@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0f"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Border accent -->
+  <rect x="0" y="626" width="1200" height="4" fill="#22d3ee" opacity="0.6"/>
+
+  <!-- Package icon -->
+  <g transform="translate(540, 160)">
+    <path d="M0 40 L60 10 L120 40 L120 90 L60 120 L0 90 Z" fill="none" stroke="#22d3ee" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M0 40 L60 70 L120 40" fill="none" stroke="#22d3ee" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="60" y1="70" x2="60" y2="120" stroke="#22d3ee" stroke-width="3"/>
+    <line x1="60" y1="20" x2="60" y2="52" stroke="#67e8f9" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="50,44 60,55 70,44" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="350" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="64" fill="#e8e8ed">Relava</text>
+
+  <!-- Tagline -->
+  <text x="600" y="410" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="28" fill="#8888a0">The package manager for Claude Code resources</text>
+
+  <!-- Install command -->
+  <rect x="320" y="450" width="560" height="48" rx="8" fill="#1a1a25" stroke="#2a2a3a" stroke-width="1"/>
+  <text x="350" y="481" font-family="SF Mono, Fira Code, monospace" font-size="18" fill="#4ade80">$</text>
+  <text x="375" y="481" font-family="SF Mono, Fira Code, monospace" font-size="18" fill="#e8e8ed">cargo install relava</text>
+
+  <!-- Bottom labels -->
+  <text x="600" y="560" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="20" fill="#8888a0">Open Source  ·  Rust CLI  ·  Apache-2.0 + ELv2</text>
+</svg>
