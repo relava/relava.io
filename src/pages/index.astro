@@ -689,7 +689,7 @@ import Layout from '../layouts/Layout.astro';
     background: var(--color-bg-elevated);
     border: 1px solid var(--color-border);
     border-radius: 10px;
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 3rem 0.75rem 1.25rem;
     position: relative;
     min-width: min(100%, 660px);
     max-width: 100%;
@@ -704,8 +704,10 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .hero-copy {
-    position: static;
-    flex-shrink: 0;
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .hero-actions {
