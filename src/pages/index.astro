@@ -1,0 +1,1244 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <!-- ===== TOP NAV ===== -->
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="/" class="nav-brand">Relava</a>
+      <div class="nav-links">
+        <a href="#features" class="nav-link nav-link--primary">Features</a>
+        <a href="#quickstart" class="nav-link">Quick Start</a>
+        <a href="https://github.com/relava/relava" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== 1. HERO ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge">Open Source &middot; Early Preview</span>
+      <h1 class="hero-title">The package manager for<br/>Claude Code resources</h1>
+      <p class="hero-contrast">Install, publish, and manage skills, agents, commands, and rules. Like npm, but for the prompt layer.</p>
+      <p class="hero-tagline">
+        Semantic versioning. Dependency resolution. A declarative manifest. One CLI to manage it all.
+      </p>
+
+      <div class="hero-install">
+        <code class="hero-cmd">
+          <span class="p">$</span> curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh
+        </code>
+        <button
+          class="copy-btn hero-copy"
+          data-copy="curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh"
+          aria-label="Copy install command"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#quickstart" class="btn btn-primary">Get Started</a>
+        <a href="https://github.com/relava/relava" class="btn btn-ghost" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+
+      <div class="hero-social-proof">
+        <a href="https://github.com/relava/relava" class="github-stars" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span class="star-label">Star on GitHub</span>
+        </a>
+        <span class="social-sep">&middot;</span>
+        <span class="social-label">Rust CLI &middot; Apache-2.0 + ELv2</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. FEATURES ===== -->
+  <section id="features" class="features">
+    <h2 class="section-title">Everything you need to manage resources</h2>
+    <p class="section-subtitle">A complete package management system purpose-built for Claude Code&rsquo;s prompt-layer artifacts.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        </div>
+        <h3>Semantic versioning</h3>
+        <p>Every resource follows semver. Pin exact versions, use ranges, or stay on latest. Breaking changes are always explicit.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8l-8 8"/><path d="M8 8l8 8"/></svg>
+        </div>
+        <h3>Dependency resolution</h3>
+        <p>Automatic transitive dependency resolution with conflict detection. No more manual dependency management.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>Declarative manifest</h3>
+        <p>One <code>relava.toml</code> file declares all your resources, versions, and configuration. Check it into git.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        </div>
+        <h3>Full CLI</h3>
+        <p>Install, remove, update, publish, search. All the commands you expect, with the speed of Rust.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Web GUI</h3>
+        <p>Browse, search, and manage the registry through a React-powered web interface. See download stats and documentation.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3>Download caching</h3>
+        <p>Global cache shared across projects. Install once, reuse everywhere. Offline installs from cache.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. HOW IT WORKS ===== -->
+  <section id="how-it-works" class="how-steps">
+    <h2 class="section-title">How it works</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <h3>Initialize your project</h3>
+        <p>Run <code>relava init</code> to create a <code>relava.toml</code> manifest. Declare which skills, agents, and rules your project needs.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <h3>Install resources</h3>
+        <p>Use <code>relava install</code> to pull resources from the registry. Dependencies resolve automatically. A lockfile pins exact versions.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <h3>Publish &amp; share</h3>
+        <p>Package your own skills, agents, and commands. Publish to the registry with <code>relava publish</code>. Others install with one command.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. QUICK START ===== -->
+  <section id="quickstart" class="quickstart">
+    <h2 class="section-title">Quick start</h2>
+
+    <div class="code-window">
+      <div class="code-tabs">
+        <div class="window-dots" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <span class="resolution-tab">Install</span>
+      </div>
+      <div class="code-block">
+        <button
+          class="copy-btn"
+          data-copy="curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh"
+          aria-label="Copy install command"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </button>
+        <pre><code><span class="c"># Install Relava</span>
+<span class="p">$</span> curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh
+
+<span class="c"># Or via Cargo</span>
+<span class="p">$</span> cargo install relava</code></pre>
+      </div>
+    </div>
+
+    <div class="cli-output">
+      <div class="code-window">
+        <div class="code-tabs">
+          <div class="window-dots" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="resolution-tab">Usage</span>
+        </div>
+        <div class="code-block">
+          <pre><code><span class="c"># Initialize a project</span>
+<span class="p">$</span> relava init
+<span class="s">&#10003;</span> Created relava.toml
+
+<span class="c"># Install a skill from the registry</span>
+<span class="p">$</span> relava install skill git-workflow
+<span class="s">&#10003;</span> Resolved 3 dependencies
+<span class="s">&#10003;</span> Installed git-workflow@1.2.0
+
+<span class="c"># Search for resources</span>
+<span class="p">$</span> relava search "code review"
+<span class="f">code-reviewer</span>  1.0.4  Automated PR review agent
+<span class="f">review-skill</span>   0.8.1  Code review checklist skill</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="cli-output">
+      <div class="code-window">
+        <div class="code-tabs">
+          <div class="window-dots" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="resolution-tab">Publish</span>
+        </div>
+        <div class="code-block">
+          <pre><code><span class="c"># Publish your resource</span>
+<span class="p">$</span> relava publish
+<span class="s">&#10003;</span> Packaged my-skill@0.1.0
+<span class="s">&#10003;</span> Published to registry
+
+<span class="c"># Others can now install it</span>
+<span class="p">$</span> relava install skill my-skill</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. ARCHITECTURE ===== -->
+  <section class="architecture">
+    <h2 class="section-title">Under the hood</h2>
+    <p class="section-subtitle">Built in Rust for speed. Designed for the Claude Code ecosystem.</p>
+    <div class="arch-grid">
+      <div class="arch-item">
+        <h3>CLI &rarr; Registry</h3>
+        <p>The CLI communicates with the registry server over a REST API. Publish, search, and install from any terminal.</p>
+      </div>
+      <div class="arch-item">
+        <h3>Registry server</h3>
+        <p>Serves packages, resolves dependencies, and hosts the web GUI. Self-hostable for private registries.</p>
+      </div>
+      <div class="arch-item">
+        <h3>Project filesystem</h3>
+        <p>Resources install into your project&rsquo;s <code>skills/</code>, <code>roles/</code>, and <code>commands/</code> directories. Git-friendly, no magic.</p>
+      </div>
+      <div class="arch-item">
+        <h3>Lockfile</h3>
+        <p>Deterministic installs across machines. The lockfile pins every resolved version and integrity hash.</p>
+      </div>
+      <div class="arch-item">
+        <h3>Global cache</h3>
+        <p>Downloaded packages are cached globally. Subsequent installs are instant, even across different projects.</p>
+      </div>
+      <div class="arch-item">
+        <h3>Multi-platform</h3>
+        <p>macOS, Linux, and Windows. Pre-built binaries or build from source with Cargo. CI-friendly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. ENTERPRISE READY ===== -->
+  <section class="enterprise">
+    <h2 class="section-title">Built for teams</h2>
+    <p class="section-subtitle">From solo developers to organizations. Relava scales with you.</p>
+    <div class="enterprise-grid">
+      <div class="enterprise-item">
+        <h3>Scoped packages</h3>
+        <p>Namespace resources under your org. <code>@myteam/code-reviewer</code> stays private or goes public &mdash; your choice.</p>
+      </div>
+      <div class="enterprise-item">
+        <h3>Authentication</h3>
+        <p>Token-based auth for publishing. Read-only public access. Private registries for internal resources.</p>
+      </div>
+      <div class="enterprise-item">
+        <h3>Federation</h3>
+        <p>Chain multiple registries. Pull from public and private sources with a single install command.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. OPEN SOURCE ===== -->
+  <section class="open-source">
+    <h2 class="section-title">Open source</h2>
+    <div class="os-links">
+      <a href="https://github.com/relava/relava" class="hero-link hero-link--github" target="_blank" rel="noopener">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        <span class="hero-link-label">GitHub</span>
+        <span class="hero-link-sub">View source &amp; contribute</span>
+      </a>
+      <a href="https://crates.io/crates/relava" class="hero-link hero-link--crates" target="_blank" rel="noopener">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        <span class="hero-link-label">Crates.io</span>
+        <span class="hero-link-sub">cargo install relava</span>
+      </a>
+    </div>
+    <p class="license-note">CLI &amp; types: Apache-2.0 &middot; Server: ELv2</p>
+  </section>
+
+  <!-- ===== 8. FINAL CTA ===== -->
+  <section class="final-cta">
+    <p class="builder-trigger">Stop copying prompt files between projects.</p>
+    <h2 class="section-title">Install Relava</h2>
+    <div class="hero-install" style="animation:none;">
+      <code class="hero-cmd">
+        <span class="p">$</span> curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh
+      </code>
+      <button
+        class="copy-btn hero-copy"
+        data-copy="curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh"
+        aria-label="Copy install command"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="hero-actions" style="animation:none;">
+      <a href="https://github.com/relava/relava" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+      <a href="#features" class="btn btn-ghost">Explore Features</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <nav class="footer-links">
+      <a href="#features">Features</a>
+      <span class="footer-sep" aria-hidden="true">&middot;</span>
+      <a href="#quickstart">Quick Start</a>
+      <span class="footer-sep" aria-hidden="true">&middot;</span>
+      <a href="https://github.com/relava/relava" target="_blank" rel="noopener">GitHub</a>
+      <span class="footer-sep" aria-hidden="true">&middot;</span>
+      <a href="https://crates.io/crates/relava" target="_blank" rel="noopener">Crates.io</a>
+      <span class="footer-sep" aria-hidden="true">&middot;</span>
+      <a href="https://github.com/relava/relava/blob/main/LICENSE" target="_blank" rel="noopener">License</a>
+    </nav>
+    <p class="footer-brand">The package manager for Claude Code resources.</p>
+    <p class="footer-credit">Built by the Relava contributors.</p>
+  </footer>
+</Layout>
+
+<script>
+  // Copy button functionality
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const text = btn.getAttribute('data-copy');
+      if (!text) return;
+      await navigator.clipboard.writeText(text);
+      btn.classList.add('copied');
+      setTimeout(() => btn.classList.remove('copied'), 2000);
+    });
+  });
+
+  // Nav scroll effect
+  const nav = document.querySelector('.top-nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('top-nav--scrolled', window.scrollY > 20);
+    }, { passive: true });
+  }
+</script>
+
+<style>
+  /* ===== TOP NAV ===== */
+  .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0.75rem 1.5rem;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .top-nav--scrolled {
+    border-bottom-color: var(--color-border);
+  }
+
+  .top-nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .nav-brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-text);
+  }
+
+  .nav-brand:hover {
+    color: var(--color-text);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: var(--color-text);
+  }
+
+  .nav-link--primary {
+    color: var(--color-accent);
+  }
+
+  .nav-link--primary:hover {
+    color: var(--color-accent-light);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+    padding: 7rem 1.5rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(34, 211, 238, 0.10) 0%,
+      rgba(34, 211, 238, 0.03) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-border) 50%,
+      transparent 100%
+    );
+  }
+
+  .hero-inner {
+    max-width: var(--max-width);
+    position: relative;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.02em;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.6s ease-out 0s both;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 5.5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #fff 0%, var(--color-accent-light) 30%, var(--color-accent) 70%, var(--color-accent-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+  }
+
+  .hero-contrast {
+    font-size: 1.05rem;
+    color: var(--color-text);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+  }
+
+  .hero-tagline {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--color-text-muted);
+    max-width: 620px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+  }
+
+  .hero-install {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+    position: relative;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .hero-cmd {
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    color: var(--color-text);
+    white-space: nowrap;
+  }
+
+  .hero-copy {
+    position: static;
+    flex-shrink: 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.6s ease-out 0.4s both;
+  }
+
+  .hero-social-proof {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    animation: fadeInUp 0.6s ease-out 0.5s both;
+  }
+
+  .github-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: all 0.2s;
+  }
+
+  .github-stars:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .github-stars svg {
+    flex-shrink: 0;
+  }
+
+  .social-sep {
+    color: var(--color-border);
+  }
+
+  .social-label {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+
+  /* ===== BUTTONS ===== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: var(--color-bg-deep);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-accent-light);
+    color: var(--color-bg-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(34, 211, 238, 0.3);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--color-text-muted);
+    color: var(--color-text);
+    transform: translateY(-1px);
+  }
+
+  /* ===== SECTION COMMON ===== */
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    max-width: 540px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+  }
+
+  .section-title + .section-subtitle {
+    margin-top: -0.25rem;
+  }
+
+  /* ===== 2. FEATURES ===== */
+  .features {
+    padding: 6rem 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .features::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 400px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-border) 50%, transparent 100%);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    text-align: left;
+  }
+
+  .feature-card {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.25s;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(34, 211, 238, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 8px;
+    background: rgba(34, 211, 238, 0.1);
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .feature-card p {
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .feature-card code {
+    color: var(--color-accent);
+    font-size: 0.85em;
+  }
+
+  /* ===== 3. HOW STEPS ===== */
+  .how-steps {
+    padding: 6rem 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .how-steps::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 400px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-border) 50%, transparent 100%);
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    text-align: left;
+  }
+
+  .step-card {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: all 0.25s;
+  }
+
+  .step-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(34, 211, 238, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-bg-deep);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .step-card h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .step-card p {
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .step-card code {
+    color: var(--color-accent);
+    font-size: 0.85em;
+  }
+
+  /* ===== 4. QUICK START ===== */
+  .quickstart {
+    padding: 6rem 1.5rem;
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .quickstart::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 400px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-border) 50%, transparent 100%);
+  }
+
+  .cli-output {
+    margin-top: 1.5rem;
+  }
+
+  .code-window {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .code-tabs {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg-surface);
+  }
+
+  .window-dots {
+    display: flex;
+    gap: 6px;
+    padding: 0 1rem;
+  }
+
+  .window-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-border);
+  }
+
+  .window-dots span:first-child {
+    background: #ff5f57;
+  }
+
+  .window-dots span:nth-child(2) {
+    background: #febc2e;
+  }
+
+  .window-dots span:nth-child(3) {
+    background: #28c840;
+  }
+
+  .code-block {
+    position: relative;
+    padding: 1.5rem;
+  }
+
+  .code-block pre {
+    margin: 0;
+    overflow-x: auto;
+  }
+
+  .code-block code {
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+
+  .code-block .c {
+    color: var(--color-text-muted);
+  }
+
+  .code-block .p {
+    color: var(--color-green);
+    user-select: none;
+  }
+
+  .code-block .f {
+    color: var(--color-accent);
+  }
+
+  .code-block .s {
+    color: var(--color-green);
+  }
+
+  .resolution-tab {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--color-accent);
+    padding: 0.7rem 1.25rem;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    padding: 0.4rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .copy-btn:hover {
+    color: var(--color-text);
+    border-color: var(--color-text-muted);
+  }
+
+  .copy-btn .check-icon {
+    display: none;
+  }
+
+  .copy-btn.copied .check-icon {
+    display: block;
+    color: var(--color-green);
+  }
+
+  .copy-btn.copied svg:first-child {
+    display: none;
+  }
+
+  /* ===== 5. ARCHITECTURE ===== */
+  .architecture {
+    padding: 6rem 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .architecture::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 400px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-border) 50%, transparent 100%);
+  }
+
+  .arch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    text-align: left;
+  }
+
+  .arch-item {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: all 0.25s;
+  }
+
+  .arch-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(34, 211, 238, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .arch-item h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .arch-item p {
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .arch-item code {
+    color: var(--color-accent);
+    font-size: 0.85em;
+  }
+
+  /* ===== 6. ENTERPRISE ===== */
+  .enterprise {
+    padding: 6rem 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .enterprise::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 400px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-border) 50%, transparent 100%);
+  }
+
+  .enterprise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    text-align: left;
+  }
+
+  .enterprise-item {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: all 0.25s;
+  }
+
+  .enterprise-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(34, 211, 238, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .enterprise-item h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .enterprise-item p {
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .enterprise-item code {
+    color: var(--color-accent);
+    font-size: 0.85em;
+  }
+
+  /* ===== 7. OPEN SOURCE ===== */
+  .open-source {
+    padding: 5rem 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .open-source::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 400px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-border) 50%, transparent 100%);
+  }
+
+  .os-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 1.75rem 2.5rem;
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    transition: all 0.25s;
+    min-width: 180px;
+  }
+
+  .hero-link:hover {
+    transform: translateY(-2px);
+    border-color: rgba(34, 211, 238, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-link svg {
+    color: var(--color-accent);
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-link-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-text);
+  }
+
+  .hero-link-sub {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+
+  .license-note {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  /* ===== 8. FINAL CTA ===== */
+  .final-cta {
+    padding: 5rem 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .builder-trigger {
+    font-size: 1.05rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    padding: 3rem 1.5rem 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-sep {
+    color: var(--color-border);
+    font-size: 0.85rem;
+  }
+
+  .footer-brand {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-credit {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    opacity: 0.6;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .features-grid,
+    .steps-grid,
+    .arch-grid,
+    .enterprise-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+      gap: 1rem;
+    }
+
+    .hero-install {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .hero-cmd {
+      font-size: 0.75rem;
+    }
+
+    .hero-copy {
+      align-self: flex-end;
+    }
+
+    .os-links {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-link {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-links {
+      gap: 0.75rem;
+    }
+
+    .nav-link {
+      font-size: 0.82rem;
+    }
+  }
+</style>
