@@ -3,18 +3,24 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <!-- ===== TOP NAV ===== -->
-  <nav class="top-nav">
-    <div class="top-nav-inner">
-      <a href="/" class="nav-brand">Relava</a>
-      <div class="nav-links">
-        <a href="#features" class="nav-link nav-link--primary">Features</a>
-        <a href="#quickstart" class="nav-link">Quick Start</a>
-        <a href="https://github.com/relava/relava" class="nav-link" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </nav>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <!-- ===== TOP NAV ===== -->
+  <header>
+    <nav class="top-nav">
+      <div class="top-nav-inner">
+        <a href="/" class="nav-brand">Relava</a>
+        <div class="nav-links">
+          <a href="#features" class="nav-link nav-link--primary">Features</a>
+          <a href="#how-it-works" class="nav-link">How It Works</a>
+          <a href="#quickstart" class="nav-link">Quick Start</a>
+          <a href="https://github.com/relava/relava" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
   <!-- ===== 1. HERO ===== -->
   <section class="hero">
     <div class="hero-inner">
@@ -289,8 +295,11 @@ import Layout from '../layouts/Layout.astro';
     <p class="builder-trigger">Stop copying prompt files between projects.</p>
     <h2 class="section-title">Install Relava</h2>
     <div class="hero-install" style="animation:none;">
-      <code class="hero-cmd">
+      <code class="hero-cmd hero-cmd--full">
         <span class="p">$</span> curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh
+      </code>
+      <code class="hero-cmd hero-cmd--short">
+        <span class="p">$</span> cargo install relava
       </code>
       <button
         class="copy-btn hero-copy"
@@ -311,6 +320,8 @@ import Layout from '../layouts/Layout.astro';
       <a href="#features" class="btn btn-ghost">Explore Features</a>
     </div>
   </section>
+
+  </main>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
@@ -352,6 +363,25 @@ import Layout from '../layouts/Layout.astro';
 </script>
 
 <style>
+  /* ===== SKIP LINK ===== */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 200;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-accent);
+    color: var(--color-bg-deep);
+    font-weight: 600;
+    border-radius: 0 0 8px 8px;
+    transition: top 0.2s;
+  }
+
+  .skip-link:focus {
+    top: 0;
+    color: var(--color-bg-deep);
+  }
+
   /* ===== TOP NAV ===== */
   .top-nav {
     position: fixed;
@@ -434,12 +464,13 @@ import Layout from '../layouts/Layout.astro';
     top: -30%;
     left: 50%;
     transform: translateX(-50%);
-    width: 900px;
-    height: 900px;
+    width: 1000px;
+    height: 1000px;
     background: radial-gradient(
       ellipse at center,
-      rgba(34, 211, 238, 0.10) 0%,
-      rgba(34, 211, 238, 0.03) 40%,
+      rgba(34, 211, 238, 0.18) 0%,
+      rgba(34, 211, 238, 0.08) 30%,
+      rgba(34, 211, 238, 0.03) 50%,
       transparent 70%
     );
     pointer-events: none;
@@ -848,6 +879,7 @@ import Layout from '../layouts/Layout.astro';
   .code-block pre {
     margin: 0;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .code-block code {
@@ -855,6 +887,8 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.88rem;
     line-height: 1.8;
     color: var(--color-text);
+    word-break: break-all;
+    overflow-wrap: break-word;
   }
 
   .code-block .c {
