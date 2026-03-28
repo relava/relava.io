@@ -25,9 +25,9 @@ import Layout from '../layouts/Layout.astro';
   <section class="hero">
     <div class="hero-inner">
       <span class="hero-badge">Open Source &middot; Early Preview</span>
-      <h1 class="hero-title">The package manager for<br class="hero-break"/> Claude Code resources</h1>
+      <h1 class="hero-title">Your local package manager for<br class="hero-break"/> Claude Code resources</h1>
       <p class="hero-tagline">
-        Install, publish, and manage skills, agents, commands, and rules.<br/>Like npm, but for the prompt layer.
+        Install, publish, and manage skills, agents, commands, and rules &mdash; all on your machine.<br/>Like npm, but for the prompt layer. No cloud required.
       </p>
 
       <div class="hero-install-wrap">
@@ -114,7 +114,7 @@ import Layout from '../layouts/Layout.astro';
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
         <h3>Web GUI</h3>
-        <p>Browse, search, and manage the registry through a React-powered web interface. See download stats and documentation.</p>
+        <p>Browse, search, and manage your local registry through a React-powered web interface. See download stats and documentation.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
@@ -138,7 +138,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="step-card">
         <span class="step-number">2</span>
         <h3>Install resources</h3>
-        <p>Use <code>relava install</code> to pull resources from the registry. Dependencies resolve automatically. A lockfile pins exact versions.</p>
+        <p>Use <code>relava install</code> to pull resources from your local registry. Dependencies resolve automatically. A lockfile pins exact versions.</p>
       </div>
       <div class="step-card">
         <span class="step-number">3</span>
@@ -208,7 +208,7 @@ import Layout from '../layouts/Layout.astro';
 <span class="p">$</span> relava init
 <span class="s">&#10003;</span> Created relava.toml
 
-<span class="c"># Install a skill from the registry</span>
+<span class="c"># Install a skill from the local registry</span>
 <span class="p">$</span> relava install skill git-workflow
 <span class="s">&#10003;</span> Resolved 3 dependencies
 <span class="s">&#10003;</span> Installed git-workflow@1.2.0
@@ -233,7 +233,7 @@ import Layout from '../layouts/Layout.astro';
           <pre><code><span class="c"># Publish your resource</span>
 <span class="p">$</span> relava publish
 <span class="s">&#10003;</span> Packaged my-skill@0.1.0
-<span class="s">&#10003;</span> Published to registry
+<span class="s">&#10003;</span> Published to local registry
 
 <span class="c"># Use it in any of your projects</span>
 <span class="p">$</span> cd ~/other-project &amp;&amp; relava install skill my-skill</code></pre>
@@ -248,12 +248,12 @@ import Layout from '../layouts/Layout.astro';
     <p class="section-subtitle">Built in Rust for speed. Designed for the Claude Code ecosystem.</p>
     <div class="arch-grid">
       <div class="arch-item">
-        <h3>CLI &rarr; Registry</h3>
-        <p>The CLI communicates with the registry server over a REST API. Publish, search, and install from any terminal.</p>
+        <h3>CLI &rarr; Local Registry</h3>
+        <p>The CLI communicates with a local registry server over a REST API. Publish, search, and install from any terminal.</p>
       </div>
       <div class="arch-item">
-        <h3>Registry server</h3>
-        <p>Serves packages, resolves dependencies, and hosts the web GUI. Self-hostable for private registries.</p>
+        <h3>Local registry server</h3>
+        <p>Runs on your machine. Serves packages, resolves dependencies, and hosts the web GUI. No external services needed.</p>
       </div>
       <div class="arch-item">
         <h3>Project filesystem</h3>
@@ -366,7 +366,7 @@ import Layout from '../layouts/Layout.astro';
       <span class="footer-sep" aria-hidden="true">&middot;</span>
       <a href="https://github.com/relava/relava/blob/main/LICENSE" target="_blank" rel="noopener">License</a>
     </nav>
-    <p class="footer-brand">The package manager for Claude Code resources.</p>
+    <p class="footer-brand">Your local package manager for Claude Code resources.</p>
     <p class="footer-credit">Built by the Relava contributors.</p>
   </footer>
 </Layout>
@@ -691,6 +691,7 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 10px;
     padding: 0.75rem 1.25rem;
     position: relative;
+    min-width: min(100%, 580px);
     max-width: 100%;
     overflow-x: auto;
   }
@@ -1021,7 +1022,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .code-block:has(.copy-btn) {
-    padding-right: 3.5rem;
+    padding-right: 4.5rem;
   }
 
   .code-block pre {
