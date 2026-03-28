@@ -25,8 +25,11 @@ import Layout from '../layouts/Layout.astro';
       </p>
 
       <div class="hero-install">
-        <code class="hero-cmd">
+        <code class="hero-cmd hero-cmd--full">
           <span class="p">$</span> curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh
+        </code>
+        <code class="hero-cmd hero-cmd--short">
+          <span class="p">$</span> cargo install relava
         </code>
         <button
           class="copy-btn hero-copy"
@@ -518,6 +521,10 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.88rem;
     color: var(--color-text);
     white-space: nowrap;
+  }
+
+  .hero-cmd--short {
+    display: none;
   }
 
   .hero-copy {
@@ -1185,17 +1192,12 @@ import Layout from '../layouts/Layout.astro';
       gap: 1rem;
     }
 
-    .hero-install {
-      flex-direction: column;
-      gap: 0.5rem;
+    .hero-cmd--full {
+      display: none;
     }
 
-    .hero-cmd {
-      font-size: 0.75rem;
-    }
-
-    .hero-copy {
-      align-self: flex-end;
+    .hero-cmd--short {
+      display: inline;
     }
 
     .os-links {
