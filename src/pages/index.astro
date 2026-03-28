@@ -30,26 +30,34 @@ import Layout from '../layouts/Layout.astro';
         Install, publish, and manage skills, agents, commands, and rules.<br/>Like npm, but for the prompt layer.
       </p>
 
-      <div class="hero-install">
-        <code class="hero-cmd hero-cmd--full">
-          <span class="p">$</span> curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh
-        </code>
-        <code class="hero-cmd hero-cmd--short">
-          <span class="p">$</span> cargo install relava
-        </code>
-        <button
-          class="copy-btn hero-copy"
-          data-copy="curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh"
-          aria-label="Copy install command"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-          </svg>
-          <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-        </button>
+      <div class="hero-install-wrap">
+        <div class="os-tabs" role="tablist" aria-label="Operating system">
+          <button class="os-tab os-tab--unix" role="tab" aria-selected="true" data-os="unix">macOS / Linux</button>
+          <button class="os-tab os-tab--win" role="tab" aria-selected="false" data-os="win">Windows</button>
+        </div>
+        <div class="hero-install">
+          <code class="hero-cmd os-cmd os-cmd--unix">
+            <span class="p">$</span> curl -fsSL https://relava.io/install.sh | sh
+          </code>
+          <code class="hero-cmd os-cmd os-cmd--win" style="display:none;">
+            <span class="p">&gt;</span> irm https://relava.io/install.ps1 | iex
+          </code>
+          <button
+            class="copy-btn hero-copy"
+            data-copy-unix="curl -fsSL https://relava.io/install.sh | sh"
+            data-copy-win="irm https://relava.io/install.ps1 | iex"
+            data-copy="curl -fsSL https://relava.io/install.sh | sh"
+            aria-label="Copy install command"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div class="hero-actions">
@@ -149,12 +157,17 @@ import Layout from '../layouts/Layout.astro';
         <div class="window-dots" aria-hidden="true">
           <span></span><span></span><span></span>
         </div>
-        <span class="resolution-tab">Install</span>
+        <div class="code-os-tabs" role="tablist" aria-label="Operating system">
+          <button class="code-os-tab code-os-tab--unix" role="tab" aria-selected="true" data-os="unix">macOS / Linux</button>
+          <button class="code-os-tab code-os-tab--win" role="tab" aria-selected="false" data-os="win">Windows</button>
+        </div>
       </div>
       <div class="code-block">
         <button
           class="copy-btn"
-          data-copy="curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh"
+          data-copy-unix="curl -fsSL https://relava.io/install.sh | sh"
+          data-copy-win="irm https://relava.io/install.ps1 | iex"
+          data-copy="curl -fsSL https://relava.io/install.sh | sh"
           aria-label="Copy install command"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -165,11 +178,20 @@ import Layout from '../layouts/Layout.astro';
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
         </button>
-        <pre><code><span class="c"># Install Relava</span>
-<span class="p">$</span> curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh
+        <div class="os-cmd os-cmd--unix">
+          <pre><code><span class="c"># Install Relava</span>
+<span class="p">$</span> curl -fsSL https://relava.io/install.sh | sh
 
 <span class="c"># Or via Cargo</span>
 <span class="p">$</span> cargo install relava</code></pre>
+        </div>
+        <div class="os-cmd os-cmd--win" style="display:none;">
+          <pre><code><span class="c"># Install Relava (PowerShell)</span>
+<span class="p">&gt;</span> irm https://relava.io/install.ps1 | iex
+
+<span class="c"># Or via Cargo</span>
+<span class="p">&gt;</span> cargo install relava</code></pre>
+        </div>
       </div>
     </div>
 
@@ -294,26 +316,34 @@ import Layout from '../layouts/Layout.astro';
   <section class="final-cta">
     <p class="builder-trigger">Stop copying prompt files between projects.</p>
     <h2 class="section-title">Install Relava</h2>
-    <div class="hero-install" style="animation:none;">
-      <code class="hero-cmd hero-cmd--full">
-        <span class="p">$</span> curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh
-      </code>
-      <code class="hero-cmd hero-cmd--short">
-        <span class="p">$</span> cargo install relava
-      </code>
-      <button
-        class="copy-btn hero-copy"
-        data-copy="curl -fsSL https://raw.githubusercontent.com/relava/relava/main/scripts/install.sh | sh"
-        aria-label="Copy install command"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-        <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
-      </button>
+    <div class="hero-install-wrap" style="animation:none;">
+      <div class="os-tabs" role="tablist" aria-label="Operating system">
+        <button class="os-tab os-tab--unix" role="tab" aria-selected="true" data-os="unix">macOS / Linux</button>
+        <button class="os-tab os-tab--win" role="tab" aria-selected="false" data-os="win">Windows</button>
+      </div>
+      <div class="hero-install">
+        <code class="hero-cmd os-cmd os-cmd--unix">
+          <span class="p">$</span> curl -fsSL https://relava.io/install.sh | sh
+        </code>
+        <code class="hero-cmd os-cmd os-cmd--win" style="display:none;">
+          <span class="p">&gt;</span> irm https://relava.io/install.ps1 | iex
+        </code>
+        <button
+          class="copy-btn hero-copy"
+          data-copy-unix="curl -fsSL https://relava.io/install.sh | sh"
+          data-copy-win="irm https://relava.io/install.ps1 | iex"
+          data-copy="curl -fsSL https://relava.io/install.sh | sh"
+          aria-label="Copy install command"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </button>
+      </div>
     </div>
     <div class="hero-actions" style="animation:none;">
       <a href="https://github.com/relava/relava" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
@@ -342,6 +372,47 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
+  // OS detection
+  function detectOS(): 'unix' | 'win' {
+    const ua = navigator.userAgent || '';
+    const platform = (navigator as any).userAgentData?.platform || navigator.platform || '';
+    if (/win/i.test(platform) || /windows/i.test(ua)) return 'win';
+    return 'unix';
+  }
+
+  function setOS(os: 'unix' | 'win') {
+    // Update all tab groups (hero + quickstart + final CTA)
+    document.querySelectorAll('.os-tab, .code-os-tab').forEach(tab => {
+      const tabOS = (tab as HTMLElement).dataset.os;
+      tab.setAttribute('aria-selected', tabOS === os ? 'true' : 'false');
+    });
+
+    // Show/hide command blocks
+    document.querySelectorAll('.os-cmd--unix').forEach(el => {
+      (el as HTMLElement).style.display = os === 'unix' ? '' : 'none';
+    });
+    document.querySelectorAll('.os-cmd--win').forEach(el => {
+      (el as HTMLElement).style.display = os === 'win' ? '' : 'none';
+    });
+
+    // Update copy button data-copy attributes
+    document.querySelectorAll('.copy-btn[data-copy-unix]').forEach(btn => {
+      const key = os === 'win' ? 'data-copy-win' : 'data-copy-unix';
+      btn.setAttribute('data-copy', btn.getAttribute(key) || '');
+    });
+  }
+
+  // Initialize OS detection
+  setOS(detectOS());
+
+  // Tab click handlers
+  document.querySelectorAll('.os-tab, .code-os-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const os = (tab as HTMLElement).dataset.os as 'unix' | 'win';
+      if (os) setOS(os);
+    });
+  });
+
   // Copy button functionality
   document.querySelectorAll('.copy-btn').forEach(btn => {
     btn.addEventListener('click', async () => {
@@ -533,6 +604,84 @@ import Layout from '../layouts/Layout.astro';
     animation: fadeInUp 0.6s ease-out 0.2s both;
   }
 
+  /* ===== OS TABS (hero + final CTA) ===== */
+  .hero-install-wrap {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+    max-width: 100%;
+  }
+
+  .os-tabs {
+    display: inline-flex;
+    gap: 0;
+    margin-bottom: 0.5rem;
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 3px;
+  }
+
+  .os-tab {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.35rem 0.85rem;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .os-tab[aria-selected="true"] {
+    background: var(--color-bg-elevated);
+    color: var(--color-accent);
+  }
+
+  .os-tab:hover:not([aria-selected="true"]) {
+    color: var(--color-text);
+  }
+
+  /* ===== OS TABS (quickstart code window) ===== */
+  .code-os-tabs {
+    display: inline-flex;
+    gap: 0;
+    margin-left: auto;
+    margin-right: 0.5rem;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 2px;
+  }
+
+  .code-os-tab {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.25rem 0.65rem;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .code-os-tab[aria-selected="true"] {
+    background: var(--color-bg-surface);
+    color: var(--color-accent);
+  }
+
+  .code-os-tab:hover:not([aria-selected="true"]) {
+    color: var(--color-text);
+  }
+
   .hero-install {
     display: inline-flex;
     align-items: center;
@@ -541,8 +690,6 @@ import Layout from '../layouts/Layout.astro';
     border: 1px solid var(--color-border);
     border-radius: 10px;
     padding: 0.75rem 1.25rem;
-    margin-bottom: 2rem;
-    animation: fadeInUp 0.6s ease-out 0.3s both;
     position: relative;
     max-width: 100%;
     overflow-x: auto;
@@ -553,10 +700,6 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.88rem;
     color: var(--color-text);
     white-space: nowrap;
-  }
-
-  .hero-cmd--short {
-    display: none;
   }
 
   .hero-copy {
@@ -844,6 +987,7 @@ import Layout from '../layouts/Layout.astro';
     align-items: center;
     border-bottom: 1px solid var(--color-border);
     background: var(--color-bg-surface);
+    padding: 0.4rem 0;
   }
 
   .window-dots {
@@ -1225,12 +1369,8 @@ import Layout from '../layouts/Layout.astro';
       display: none;
     }
 
-    .hero-cmd--full {
-      display: none;
-    }
-
-    .hero-cmd--short {
-      display: inline;
+    .hero-cmd {
+      font-size: 0.78rem;
     }
 
     .os-links {
