@@ -20,9 +20,8 @@ import Layout from '../layouts/Layout.astro';
     <div class="hero-inner">
       <span class="hero-badge">Open Source &middot; Early Preview</span>
       <h1 class="hero-title">The package manager for<br/>Claude Code resources</h1>
-      <p class="hero-contrast">Install, publish, and manage skills, agents, commands, and rules. Like npm, but for the prompt layer.</p>
       <p class="hero-tagline">
-        Semantic versioning. Dependency resolution. A declarative manifest. One CLI to manage it all.
+        Install, publish, and manage skills, agents, commands, and rules.<br/>Like npm, but for the prompt layer.
       </p>
 
       <div class="hero-install">
@@ -488,21 +487,13 @@ import Layout from '../layouts/Layout.astro';
     animation: fadeInUp 0.6s ease-out 0.1s both;
   }
 
-  .hero-contrast {
-    font-size: 1.05rem;
-    color: var(--color-text);
-    font-weight: 500;
-    margin-bottom: 1rem;
-    animation: fadeInUp 0.6s ease-out 0.2s both;
-  }
-
   .hero-tagline {
     font-family: var(--font-body);
     font-weight: 400;
-    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
     color: var(--color-text-muted);
-    max-width: 620px;
-    margin: 0 auto 2rem;
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
     line-height: 1.7;
     animation: fadeInUp 0.6s ease-out 0.2s both;
   }
